@@ -1,0 +1,43 @@
+Project Name : weather-report
+Class Name - Main.java (This is main class to get the input from the user and retrieve the weather report with respect of input)
+Class Name - Forecast.java, ForecastPeriods.java, ForecastProperties.java (These are the Model class files for the response from the API. In these class only created necessary properties which need to get the weather report)
+Gson - Jar file used to convert JSON Object to Java POJO Object ( Added as dependency in pom.xml file)
+
+
+Test Cases :
+
+1. User Input : 37.5 -97.4
+
+Console Result :
+Enter the latitude longitude pair values
+37.5 -97.4
+Successfully got the weather Points. The URL is : https://api.weather.gov/gridpoints/ICT/59,24/forecast
+Successfully got the weather Reports.
+The following weather reports showing for the next 5 days from now
+ForecastPeriods [number=1, name=Overnight, startTime=2020-06-22T01:00:00-05:00, endTime=2020-06-22T06:00:00-05:00, isDaytime=false, temperature=67, temperatureUnit=F, temperatureTrend=null, windSpeed=9 mph, windDirection=SE, icon=https://api.weather.gov/icons/land/night/tsra,30?size=medium, shortForecast=Chance Showers And Thunderstorms, detailedForecast=A chance of showers and thunderstorms. Cloudy, with a low around 67. Southeast wind around 9 mph. Chance of precipitation is 30%.]
+ForecastPeriods [number=2, name=Monday, startTime=2020-06-22T06:00:00-05:00, endTime=2020-06-22T18:00:00-05:00, isDaytime=true, temperature=86, temperatureUnit=F, temperatureTrend=null, windSpeed=6 to 9 mph, windDirection=NW, icon=https://api.weather.gov/icons/land/day/bkn/tsra_hi,20?size=medium, shortForecast=Partly Sunny then Slight Chance Showers And Thunderstorms, detailedForecast=A slight chance of showers and thunderstorms after noon. Partly sunny, with a high near 86. Northwest wind 6 to 9 mph. Chance of precipitation is 20%.]
+ForecastPeriods [number=3, name=Monday Night, startTime=2020-06-22T18:00:00-05:00, endTime=2020-06-23T06:00:00-05:00, isDaytime=false, temperature=64, temperatureUnit=F, temperatureTrend=null, windSpeed=5 to 9 mph, windDirection=NNE, icon=https://api.weather.gov/icons/land/night/tsra_hi,50?size=medium, shortForecast=Chance Showers And Thunderstorms, detailedForecast=A chance of showers and thunderstorms. Partly cloudy, with a low around 64. North northeast wind 5 to 9 mph. Chance of precipitation is 50%.]
+ForecastPeriods [number=4, name=Tuesday, startTime=2020-06-23T06:00:00-05:00, endTime=2020-06-23T18:00:00-05:00, isDaytime=true, temperature=84, temperatureUnit=F, temperatureTrend=null, windSpeed=5 to 8 mph, windDirection=N, icon=https://api.weather.gov/icons/land/day/tsra_hi,20/few?size=medium, shortForecast=Slight Chance Showers And Thunderstorms then Sunny, detailedForecast=A slight chance of showers and thunderstorms before 7am. Sunny, with a high near 84. North wind 5 to 8 mph. Chance of precipitation is 20%.]
+ForecastPeriods [number=5, name=Tuesday Night, startTime=2020-06-23T18:00:00-05:00, endTime=2020-06-24T06:00:00-05:00, isDaytime=false, temperature=63, temperatureUnit=F, temperatureTrend=null, windSpeed=3 mph, windDirection=SE, icon=https://api.weather.gov/icons/land/night/sct?size=medium, shortForecast=Partly Cloudy, detailedForecast=Partly cloudy, with a low around 63. Southeast wind around 3 mph.]
+ForecastPeriods [number=6, name=Wednesday, startTime=2020-06-24T06:00:00-05:00, endTime=2020-06-24T18:00:00-05:00, isDaytime=true, temperature=86, temperatureUnit=F, temperatureTrend=null, windSpeed=1 to 7 mph, windDirection=S, icon=https://api.weather.gov/icons/land/day/sct/tsra_hi,20?size=medium, shortForecast=Mostly Sunny then Slight Chance Showers And Thunderstorms, detailedForecast=A slight chance of showers and thunderstorms after 1pm. Mostly sunny, with a high near 86. Chance of precipitation is 20%.]
+ForecastPeriods [number=7, name=Wednesday Night, startTime=2020-06-24T18:00:00-05:00, endTime=2020-06-25T06:00:00-05:00, isDaytime=false, temperature=67, temperatureUnit=F, temperatureTrend=null, windSpeed=8 mph, windDirection=S, icon=https://api.weather.gov/icons/land/night/tsra_hi,20/few?size=medium, shortForecast=Slight Chance Showers And Thunderstorms then Mostly Clear, detailedForecast=A slight chance of showers and thunderstorms before 7pm. Mostly clear, with a low around 67. Chance of precipitation is 20%.]
+ForecastPeriods [number=8, name=Thursday, startTime=2020-06-25T06:00:00-05:00, endTime=2020-06-25T18:00:00-05:00, isDaytime=true, temperature=90, temperatureUnit=F, temperatureTrend=null, windSpeed=6 to 14 mph, windDirection=S, icon=https://api.weather.gov/icons/land/day/few?size=medium, shortForecast=Sunny, detailedForecast=Sunny, with a high near 90.]
+ForecastPeriods [number=9, name=Thursday Night, startTime=2020-06-25T18:00:00-05:00, endTime=2020-06-26T06:00:00-05:00, isDaytime=false, temperature=71, temperatureUnit=F, temperatureTrend=null, windSpeed=10 to 14 mph, windDirection=S, icon=https://api.weather.gov/icons/land/night/sct/tsra_hi,20?size=medium, shortForecast=Partly Cloudy then Slight Chance Showers And Thunderstorms, detailedForecast=A slight chance of showers and thunderstorms after 1am. Partly cloudy, with a low around 71. Chance of precipitation is 20%.]
+ForecastPeriods [number=10, name=Friday, startTime=2020-06-26T06:00:00-05:00, endTime=2020-06-26T18:00:00-05:00, isDaytime=true, temperature=92, temperatureUnit=F, temperatureTrend=null, windSpeed=10 to 16 mph, windDirection=SSW, icon=https://api.weather.gov/icons/land/day/tsra_hi,20/tsra_hi,30?size=medium, shortForecast=Slight Chance Showers And Thunderstorms, detailedForecast=A slight chance of showers and thunderstorms before 1pm, then a chance of showers and thunderstorms. Mostly sunny, with a high near 92. Chance of precipitation is 30%.]
+
+
+2. User Input : Suresh Shanmugam
+
+Console Result :
+Enter the latitude longitude pair values
+Suresh Shanmugam
+Exception occurred while getting weather reportjava.util.InputMismatchException
+
+
+3. User Input : 100 6000
+
+Console Result :
+Enter the latitude longitude pair values
+100 6000
+Exception occurred while getting weather forecast from the apijava.lang.RuntimeException: Failed : HTTP Error code : 404 And the Response is : Not Found
+
